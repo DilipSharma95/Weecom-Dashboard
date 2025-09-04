@@ -1,6 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Sidebar = () => {
+    const [activeTab, setActiveTab] = useState('products');
+
+    const handleTabClick = (tab) => {
+        setActiveTab(tab);
+        // You can add routing logic here later
+        console.log(`Clicked on ${tab}`);
+    };
+
     return (
         <aside className="bg-gray-800 text-white w-64 min-h-screen p-6">
             <div className="mb-8">
@@ -9,31 +17,40 @@ const Sidebar = () => {
             <nav>
                 <ul className="space-y-2">
                     <li>
-                        <a
-                            href="#"
-                            className="flex items-center px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-white rounded-md transition-colors"
+                        <button
+                            onClick={() => handleTabClick('products')}
+                            className={`w-full flex items-center px-4 py-2 rounded-md transition-colors ${activeTab === 'products'
+                                    ? 'bg-gray-700 text-white'
+                                    : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+                                }`}
                         >
                             <span>📦</span>
-                            <span className="ml-3">Product</span>
-                        </a>
+                            <span className="ml-3">Products</span>
+                        </button>
                     </li>
                     <li>
-                        <a
-                            href="#"
-                            className="flex items-center px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-white rounded-md transition-colors"
+                        <button
+                            onClick={() => handleTabClick('analytics')}
+                            className={`w-full flex items-center px-4 py-2 rounded-md transition-colors ${activeTab === 'analytics'
+                                    ? 'bg-gray-700 text-white'
+                                    : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+                                }`}
                         >
                             <span>📊</span>
                             <span className="ml-3">Analytics</span>
-                        </a>
+                        </button>
                     </li>
                     <li>
-                        <a
-                            href="#"
-                            className="flex items-center px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-white rounded-md transition-colors"
+                        <button
+                            onClick={() => handleTabClick('settings')}
+                            className={`w-full flex items-center px-4 py-2 rounded-md transition-colors ${activeTab === 'settings'
+                                    ? 'bg-gray-700 text-white'
+                                    : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+                                }`}
                         >
                             <span>⚙️</span>
-                            <span className="ml-3">Setting</span>
-                        </a>
+                            <span className="ml-3">Settings</span>
+                        </button>
                     </li>
                 </ul>
             </nav>

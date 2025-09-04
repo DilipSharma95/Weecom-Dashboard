@@ -1,8 +1,7 @@
-// src/components/Products/ProductTable.jsx
 import React, { useState } from 'react';
-import { Card } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
+import { Card } from '../ui/card';
+import { Button } from '../ui/button';
+import { Input } from '../ui/input';
 import {
     Table,
     TableBody,
@@ -10,7 +9,8 @@ import {
     TableHead,
     TableHeader,
     TableRow,
-} from '@/components/ui/table';
+} from '../ui/table';
+import { Dialog } from '../ui/dialog';
 import LoadingSkeleton from '../common/LoadingSkeleton';
 import ErrorMessage from '../common/ErrorMessage';
 import ProductForm from './ProductForm';
